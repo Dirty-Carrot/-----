@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第四次作业</title>
+</head>
+
+<body>
+  <script>
+    // 方式一
+    let myDuiXiang1 = {
+      name: '对象',
+      age: 18,
+      sex: '女'
+    }
+    // 方式二
+    let myDuiXiang2 = new Object({
+      name: '对象',
+      age: 18,
+      sex: '女'
+    })
+    // 方式三
+    function temp() {
+      this.name = '对象'
+      this.age = 18
+      this.sex = '女'
+    }
+    let myDuiXiang3 = new temp()
+    // 复制并打印表格
+    function copyObject(name, age, sex) {
+      let newObj = {}
+      newObj.name = name
+      newObj.age = age
+      newObj.sex = sex
+      return newObj
+    }
+    let myDuiXiang4 = copyObject(myDuiXiang1.name, myDuiXiang1.age, myDuiXiang1.sex)
+    let myDuiXiang5 = copyObject(myDuiXiang1.name, myDuiXiang1.age, myDuiXiang1.sex)
+    let myDuiXiang6 = copyObject(myDuiXiang1.name, myDuiXiang1.age, myDuiXiang1.sex)
+    let arr = []
+    arr.push(myDuiXiang4, myDuiXiang5, myDuiXiang6)
+    console.table(arr)
+  </script>
+</body>
+
+</html>
